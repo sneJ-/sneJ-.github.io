@@ -1,0 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
+
+h1, h2, h3, h4, h5, h6 {
+	font: 500 23px/1.2 Raleway, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	margin: 5px 0 5px;
+	color: #222;
+}
