@@ -17,7 +17,7 @@ function fillCanvas(){
 //Draws a heart when the canvas is clicked
 function canvasClick(e){
 	var element = c;
-	var offsetX = 0, offsetY = 0
+	var offsetX = 10, offsetY = 10
 
 	if (element.offsetParent) {
 		do {
