@@ -50,12 +50,11 @@ function drawHeart(x,y){
 }
 
 function drawCircle(x,y){
-	ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
 	ctx.beginPath();
 	ctx.arc(x, y, 25, 0, 2 * Math.PI, false);
-	ctx.fillStyle = 'green';
+	ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
 	ctx.fill();
 	ctx.lineWidth = 2;
-	ctx.strokeStyle = '#003300';
+	ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
 	ctx.stroke();
 }
