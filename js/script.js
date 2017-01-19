@@ -27,7 +27,6 @@ function canvasClick(e){
 	}
 
     drawHeart(e.pageX - offsetX, e.pageY - offsetY);
-	drawRectangle(e.pageX - offsetX, e.pageY - offsetY);
 }
 
 function drawRectangles(){
@@ -37,15 +36,10 @@ function drawRectangles(){
 	ctx.fillRect(30, 30, 55, 50);
 }
 
-function drawRectangle(x,y){
-	ctx.fillStyle = "rgb(200,200,200)";
-	ctx.fillRect(x, y, 5, 5);;
-}
-
 function drawHeart(x,y){
 	ctx.fillStyle = "rgba(222, 0, 0, 0.8)";
     ctx.beginPath();
-    ctx.moveTo(x+75,y+40);
+    ctx.moveTo(x,y);
     ctx.bezierCurveTo(x+75,y+37,x+70,y+25,x+50,y+25);
     ctx.bezierCurveTo(x+20,y+25,x+20,y+62.5,x+20,y+62.5);
     ctx.bezierCurveTo(x+20,y+80,x+40,y+102,x+75,y+120);
