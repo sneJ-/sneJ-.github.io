@@ -7,20 +7,37 @@ $(document).ready(function() {
 function fillCanvas(){
 	var c = document.getElementById("placeholderCanvas");
 	if (c.getContext){
-		var ctx = c.getContext("2d");
-		drawRectangles(ctx);
-		drawHeart(ctx,200,200)
+		c.addEventListener("click", canvasClick);
+		window.ctx = c.getContext("2d");
+		drawRectangles();
+		drawHeart(200,200)
 	}
 }
 
-function drawRectangles(ctx){
+//Draws a heart when the canvas is clicked
+function canvasClick(e){
+	var element = c;
+	var offsetX = 0, offsetY = 0
+
+	if (element.offsetParent) {
+		do {
+			offsetX += element.offsetLeft;
+			offsetY += element.offsetTop;
+		}while ((element = element.offsetParent));
+	}
+
+    drawHeart(e.pageX - offsetX, e.pageY - offsetY);
+}
+
+function drawRectangles(){
 	ctx.fillStyle = "rgb(200,0,0)";
 	ctx.fillRect(10, 10, 55, 50);
 	ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
 	ctx.fillRect(30, 30, 55, 50);
 }
 
-function drawHeart(ctx,x,y){
+function drawHeart(x,y){
+	ctx.fillStyle = "rgba(222, 0, 0, 0.8)";
     ctx.beginPath();
     ctx.moveTo(x+75,y+40);
     ctx.bezierCurveTo(x+75,y+37,x+70,y+25,x+50,y+25);
