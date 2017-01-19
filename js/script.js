@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 //Fill the canvas
 function fillCanvas(){
-	var c = document.getElementById("placeholderCanvas");
+	window.c = document.getElementById("placeholderCanvas");
 	if (c.getContext){
 		c.addEventListener("click", canvasClick);
 		window.ctx = c.getContext("2d");
