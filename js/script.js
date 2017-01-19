@@ -26,7 +26,7 @@ function canvasClick(e){
 		}while ((element = element.offsetParent));
 	}
 
-    drawHeart(e.pageX - offsetX, e.pageY - offsetY);
+	drawCircle(e.pageX - offsetX, e.pageY - offsetY);
 }
 
 function drawRectangles(){
@@ -38,13 +38,24 @@ function drawRectangles(){
 
 function drawHeart(x,y){
 	ctx.fillStyle = "rgba(222, 0, 0, 0.8)";
-    ctx.beginPath();
-    ctx.moveTo(x,y);
-    ctx.bezierCurveTo(x+75,y+37,x+70,y+25,x+50,y+25);
-    ctx.bezierCurveTo(x+20,y+25,x+20,y+62.5,x+20,y+62.5);
-    ctx.bezierCurveTo(x+20,y+80,x+40,y+102,x+75,y+120);
-    ctx.bezierCurveTo(x+110,y+102,x+130,y+80,x+130,y+62.5);
-    ctx.bezierCurveTo(x+130,y+62.5,x+130,y+25,x+100,y+25);
-    ctx.bezierCurveTo(x+85,y+25,x+75,y+37,x+75,y+40);
-    ctx.fill();
+	ctx.beginPath();
+	ctx.moveTo(75+x,40+y);
+	ctx.bezierCurveTo(x+75,y+37,x+70,y+25,x+50,y+25);
+	ctx.bezierCurveTo(x+20,y+25,x+20,y+62.5,x+20,y+62.5);
+	ctx.bezierCurveTo(x+20,y+80,x+40,y+102,x+75,y+120);
+	ctx.bezierCurveTo(x+110,y+102,x+130,y+80,x+130,y+62.5);
+	ctx.bezierCurveTo(x+130,y+62.5,x+130,y+25,x+100,y+25);
+	ctx.bezierCurveTo(x+85,y+25,x+75,y+37,x+75,y+40);
+	ctx.fill();
+}
+
+function drawCircle(x,y){
+	ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
+	ctx.beginPath();
+	ctx.arc(x, y, 25, 0, 2 * Math.PI, false);
+	ctx.fillStyle = 'green';
+	ctx.fill();
+	ctx.lineWidth = 2;
+	ctx.strokeStyle = '#003300';
+	ctx.stroke();
 }
