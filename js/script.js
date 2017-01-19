@@ -17,7 +17,7 @@ function fillCanvas(){
 //Draws a heart when the canvas is clicked
 function canvasClick(e){
 	var element = c;
-	var offsetX = 10, offsetY = 10
+	var offsetX = 0, offsetY = 0
 
 	if (element.offsetParent) {
 		do {
@@ -27,6 +27,7 @@ function canvasClick(e){
 	}
 
     drawHeart(e.pageX - offsetX, e.pageY - offsetY);
+	drawRectangle(e.pageX - offsetX, e.pageY - offsetY);
 }
 
 function drawRectangles(){
@@ -34,6 +35,11 @@ function drawRectangles(){
 	ctx.fillRect(10, 10, 55, 50);
 	ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
 	ctx.fillRect(30, 30, 55, 50);
+}
+
+function drawRectangle(x,y){
+	ctx.fillStyle = "rgb(200,200,200)";
+	ctx.fillRect(x, y, 5, 5);;
 }
 
 function drawHeart(x,y){
