@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 //Fill the canvas
 function fillCanvas(){
-	window.c = document.getElementById("placeholderCanvas");
+	window.c = document.getElementById("canvas_art");
 	if (c.getContext){
 		c.addEventListener("click", canvasClick);
 		window.ctx = c.getContext("2d");
@@ -17,7 +17,7 @@ function fillCanvas(){
 	}
 }
 
-//Draws a heart when the canvas is clicked
+//Draws a rectangle when the canvas is clicked
 function canvasClick(e){
 	var element = c;
 	var offsetX = 0, offsetY = 0
