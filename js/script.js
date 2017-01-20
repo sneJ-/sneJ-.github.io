@@ -9,8 +9,11 @@ function fillCanvas(){
 	if (c.getContext){
 		c.addEventListener("click", canvasClick);
 		window.ctx = c.getContext("2d");
+		for (i = 0; i < 1000; i++) { 
+			drawCircle(Math.random()*c.width,Math.random()*c.height);
+		}
 		drawRectangles();
-		drawHeart(200,200)
+		drawHeart(242,223)
 	}
 }
 
@@ -23,7 +26,7 @@ function canvasClick(e){
 		do {
 			offsetX += element.offsetLeft;
 			offsetY += element.offsetTop;
-		}while ((element = element.offsetParent));
+		}while (element = element.offsetParent);
 	}
 
 	drawCircle(e.pageX - offsetX, e.pageY - offsetY);
@@ -32,12 +35,12 @@ function canvasClick(e){
 function drawRectangles(){
 	ctx.fillStyle = "rgb(200,0,0)";
 	ctx.fillRect(10, 10, 55, 50);
-	ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+	ctx.fillStyle = "rgba(0, 0, 200, 0.75)";
 	ctx.fillRect(30, 30, 55, 50);
 }
 
 function drawHeart(x,y){
-	ctx.fillStyle = "rgba(222, 0, 0, 0.8)";
+	ctx.fillStyle = "rgba(222, 0, 0, 0.85)";
 	ctx.beginPath();
 	ctx.moveTo(75+x,40+y);
 	ctx.bezierCurveTo(x+75,y+37,x+70,y+25,x+50,y+25);
@@ -51,10 +54,10 @@ function drawHeart(x,y){
 
 function drawCircle(x,y){
 	ctx.beginPath();
-	ctx.arc(x, y, 25, 0, 2 * Math.PI, false);
+	ctx.arc(x, y, Math.random()*23+2, 0, 2 * Math.PI, false);
 	ctx.fillStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
 	ctx.fill();
-	ctx.lineWidth = 2;
+	ctx.lineWidth = Math.random()*3+0.5;
 	ctx.strokeStyle = 'hsl(' + 360 * Math.random() + ', 50%, 50%)';
 	ctx.stroke();
 }

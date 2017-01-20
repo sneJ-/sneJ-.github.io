@@ -12,4 +12,5 @@ canvas {
     padding: 0;
     margin: auto;
     display: block;
+	border:1px dashed #000000;
 }
