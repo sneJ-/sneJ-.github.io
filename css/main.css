@@ -13,4 +13,14 @@ canvas {
     margin: auto;
     display: block;
 	border:1px dashed #000000;
+	border-radius: 25px;
+}
+
+#ipAddresses {
+	width: 50%;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	display: block;
+	white-space: pre;
 }
