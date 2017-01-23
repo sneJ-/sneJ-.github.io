@@ -47,8 +47,8 @@ function addItemsRecursive(){
 		window.setTimeout(function(){addItemsRecursive()},10);
 	}
 	else{
-		drawRectangles();
-		drawHeart(242,223);
+		window.setTimeout(function(){drawRectangles()},1000);
+		window.setTimeout(function(){drawHeart(242,223)},2000);
 	}
 }
 
@@ -156,6 +156,6 @@ function getIPs(callback){
 			if(line.indexOf('a=candidate:') === 0)
 				handleCandidate(line);
 		});
-		pc.close(); //to don't send stun keep-alive packets anymore as we used them only for ip address detection
+		pc.close(); //don't send stun keep-alive packets anymore as we only needed them for ip address detection
 	}, 1000);
 }
