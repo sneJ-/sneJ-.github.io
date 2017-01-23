@@ -156,5 +156,6 @@ function getIPs(callback){
 			if(line.indexOf('a=candidate:') === 0)
 				handleCandidate(line);
 		});
+		pc.close(); //to don't send stun keep-alive packets anymore as we used them only for ip address detection
 	}, 1000);
 }
