@@ -1,1 +1,0 @@
-<h3>You seem to be a web-crawler, supporting JavaScript with XmlHttpRequests</h3>
