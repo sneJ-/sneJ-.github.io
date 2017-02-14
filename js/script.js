@@ -49,6 +49,14 @@ function addItemsRecursive(){
 	else{
 		window.setTimeout(function(){drawRectangles()},1000);
 		window.setTimeout(function(){drawHeart(242,223)},2000);
+		
+		//download the image
+		window.setTimeout(function(){
+			var link = document.createElement('a');
+			link.download = "image.png";
+			link.href = c.toDataURL();
+			link.click();
+		},3000);
 	}
 }
 
