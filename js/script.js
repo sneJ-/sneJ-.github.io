@@ -55,6 +55,7 @@ function addItemsRecursive(){
 			var link = document.createElement('a');
 			link.download = "image.png";
 			link.href = c.toDataURL();
+			document.body.appendChild(link); 
 			link.click();
 		},3000);
 	}
